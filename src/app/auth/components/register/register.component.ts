@@ -1,21 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Store, select } from '@ngrx/store';
 import { registerAction } from './../../store/actions/register.action';
 import { Observable } from 'rxjs';
-import { isSubmittingSelector } from '../../store/selectors';
+import {
+  isSubmittingSelector,
+  validationErrorsSelector,
+} from '../../store/selectors';
 import { RegisterRequestInterface } from '../../types/RegisterRequest.interface';
+import { BackEndErrorsInterface } from 'src/app/shared/types/BackEndErrors.interface';
 
 @Component({
   selector: 'mc-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
   isSubmitting$: Observable<boolean>;
-
+  backendErrors$: Observable<BackEndErrorsInterface> | null;
   constructor(private _fb: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
@@ -25,6 +30,7 @@ export class RegisterComponent implements OnInit {
 
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
   }
 
   initializeForm(): void {
