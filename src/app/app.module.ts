@@ -1,4 +1,5 @@
 import { AuthModule } from './auth/auth.module';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,6 +25,7 @@ import { AuthInterceptor } from './shared/services/auth.interceptor.service';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    GlobalFeedModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
