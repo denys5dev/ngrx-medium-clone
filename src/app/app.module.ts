@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { TopbarModule } from './shared/modules/topbar/topbar.module';
 import { AuthInterceptor } from './shared/services/auth.interceptor.service';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -19,13 +20,14 @@ import { AuthInterceptor } from './shared/services/auth.interceptor.service';
     HttpClientModule,
     AuthModule,
     TopbarModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    GlobalFeedModule
+    GlobalFeedModule,
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

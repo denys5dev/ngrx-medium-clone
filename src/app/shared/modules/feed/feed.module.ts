@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 import { ErrorMessageModule } from './../error-message/error-message.module';
 import { LoadingModule } from './../loading/loading.module';
+import { PaginationModule } from './../pagination/pagination.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,8 @@ import { LoadingModule } from './../loading/loading.module';
     StoreModule.forFeature('feed', reducers),
     EffectsModule.forFeature([GetFeedEffect]),
     ErrorMessageModule,
-    LoadingModule
+    LoadingModule,
+    PaginationModule
   ],
   declarations: [FeedComponent],
   exports: [FeedComponent],
