@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ErrorMessageModule } from './../error-message/error-message.module';
 import { LoadingModule } from './../loading/loading.module';
 import { PaginationModule } from './../pagination/pagination.module';
+import { TagListModule } from './../tagList/tagList.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import { PaginationModule } from './../pagination/pagination.module';
     EffectsModule.forFeature([GetFeedEffect]),
     ErrorMessageModule,
     LoadingModule,
-    PaginationModule
+    PaginationModule,
+    TagListModule,
   ],
   declarations: [FeedComponent],
   exports: [FeedComponent],
