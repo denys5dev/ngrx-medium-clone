@@ -1,5 +1,7 @@
 import { AuthModule } from './auth/auth.module';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
+import { YourFeedModule } from './yourFeed/yourFeed.module';
+import { TagFeedModule } from './tagFeed/tagFeed.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -27,6 +29,8 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
       logOnly: environment.production,
     }),
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
