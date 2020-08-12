@@ -12,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { TopbarModule } from './shared/modules/topbar/topbar.module';
+import { ArticleModule } from './article/article.module';
 import { AuthInterceptor } from './shared/services/auth.interceptor.service';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 @NgModule({
@@ -22,6 +23,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
     HttpClientModule,
     AuthModule,
     TopbarModule,
+    ArticleModule,
     StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
