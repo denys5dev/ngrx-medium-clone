@@ -15,6 +15,7 @@ import { TopbarModule } from './shared/modules/topbar/topbar.module';
 import { ArticleModule } from './article/article.module';
 import { AuthInterceptor } from './shared/services/auth.interceptor.service';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { CreateArticleModule } from './createArticle/createArticle.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,6 +24,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
     HttpClientModule,
     AuthModule,
     TopbarModule,
+    CreateArticleModule,
     ArticleModule,
     StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
