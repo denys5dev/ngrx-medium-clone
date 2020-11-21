@@ -2,11 +2,10 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-xs-12">
-        <mc-backend-error-massage
+        <mc-backend-error-massages
           *ngIf="errorsProps"
-          [backendErrors]="errorsProps"
-        ></mc-backend-error-massage>
-
+          [backendErrorsProps]="errorsProps"
+        ></mc-backend-error-massages>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <fieldset>
             <fieldset class="form-group">
