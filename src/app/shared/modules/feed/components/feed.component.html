@@ -2,34 +2,40 @@
 <mc-error-message *ngIf="error$ | async"></mc-error-message>
 
 <div *ngIf="feed$ | async">
-    <div
-        class="article-preview"
-        *ngFor="let article of (feed$ | async)?.articles"
-    >
-        <div class="article-meta">
-            <a [routerLink]="['/profiles', article.author.username]">
-                <img [src]="article.author.image">
-            </a>
-            <div class="info">
-                <a [routerLink]="['/profiles', article.author.username]">{{ article.author.username }}</a>
-                <span class="date">{{ article.createdAt }}</span>
-            </div>
-            <div class="pull-xs-right">ADD TO FAVORITES</div>
-        </div>
-        <a
-            [routerLink]="['/articles', article.slug]"
-            class="preview-link"
+  <div
+    class="article-preview"
+    *ngFor="let article of (feed$ | async)?.articles"
+  >
+    <div class="article-meta">
+      <a [routerLink]="['/profiles', article.author.username]">
+        <img [src]="article.author.image" />
+      </a>
+      <div class="info">
+        <a [routerLink]="['/profiles', article.author.username]">{{
+          article.author.username
+        }}</a>
+        <span class="date">{{ article.createdAt }}</span>
+      </div>
+      <div class="pull-xs-right">
+        <mc-add-to-favorites
+          [isFavorites]="article.favorited"
+          [articleSlug]="article.slug"
+          [favoritesCount]="article.favoritesCount"
         >
-            <h1>{{article.title}}</h1>
-            <p>{{article.description}}</p>
-            <span>Read more...</span>
-            <mc-tag-list [tags]="article.tagList"></mc-tag-list>
-        </a>
+        </mc-add-to-favorites>
+      </div>
     </div>
-    <mc-pagination
-        [total]="(feed$ | async)?.articlesCount"
-        [limit]="limit"
-        [url]="baseUrl"
-        [currentPage]="currentPage"
-    ></mc-pagination>
+    <a [routerLink]="['/articles', article.slug]" class="preview-link">
+      <h1>{{ article.title }}</h1>
+      <p>{{ article.description }}</p>
+      <span>Read more...</span>
+      <mc-tag-list [tags]="article.tagList"></mc-tag-list>
+    </a>
+  </div>
+  <mc-pagination
+    [total]="(feed$ | async)?.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></mc-pagination>
 </div>
