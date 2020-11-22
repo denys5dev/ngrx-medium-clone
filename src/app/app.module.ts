@@ -17,6 +17,7 @@ import { AuthInterceptor } from './shared/services/auth.interceptor.service';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { CreateArticleModule } from './createArticle/createArticle.module';
 import { EditArticleModule } from './editArticle/editArticle.module';
+import { SettingsModule } from './settings/settings.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,6 +29,7 @@ import { EditArticleModule } from './editArticle/editArticle.module';
     CreateArticleModule,
     EditArticleModule,
     ArticleModule,
+    SettingsModule,
     StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
