@@ -40,10 +40,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.slug = this._route.snapshot.paramMap.get('slug');
     this.isLoading$ = this.store.pipe(select(isLoadingSelector));
     this.error$ = this.store.pipe(select(errorSelector));
-    this.isAuthor$ = combineLatest(
+    this.isAuthor$ = combineLatest([
       this.store.pipe(select(articleSelector)),
       this.store.pipe(select(currentUserSelector))
-    ).pipe(
+    ]).pipe(
       map(
         ([article, currentUser]: [
           ArticleInterface | null,
@@ -77,5 +77,4 @@ export class ArticleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.articleSubscription.unsubscribe();
   }
-
 }
