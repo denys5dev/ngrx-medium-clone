@@ -13,6 +13,7 @@ import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effects';
 import { reducers } from './store/reducer';
 import { BackendErrorMessagesModule } from '../shared/modules/backendErrorMessages/backendErrorMessages.module';
 import { UpdateCurrentUserEffect } from './store/effects/updateCurrentUser.effect';
+import { TestPipe } from '../shared/pipes/test.pipe';
 
 const routes: Routes = [
   {
@@ -39,6 +40,6 @@ const routes: Routes = [
       UpdateCurrentUserEffect,
     ]),
   ],
-  declarations: [RegisterComponent, LoginComponent],
+  declarations: [RegisterComponent, LoginComponent, TestPipe],
 })
 export class AuthModule {}

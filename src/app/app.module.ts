@@ -19,8 +19,11 @@ import { CreateArticleModule } from './createArticle/createArticle.module';
 import { EditArticleModule } from './editArticle/editArticle.module';
 import { SettingsModule } from './settings/settings.module';
 import { UserProfileModule } from './userProfile/userProfile.module';
+import { MyComponentAComponent } from './my-componentA/my-componentA.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [	AppComponent,
+      MyComponentAComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
