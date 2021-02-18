@@ -12,7 +12,7 @@ import {
 import { combineLatest } from 'rxjs';
 import { currentUserSelector } from 'src/app/auth/store/selectors';
 import { CurrentUserInterface } from 'src/app/shared/types/CurrentUser.interface';
-import { map } from 'rxjs/internal/operators/map';
+import { map } from 'rxjs/operators';
 import { deleteArticleAction } from '../store/actions/deleteArticle.action';
 
 @Component({
