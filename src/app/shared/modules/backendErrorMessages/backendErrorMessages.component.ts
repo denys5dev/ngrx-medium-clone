@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { BackEndErrorsInterface } from '../../types/BackendErrors.interface';
+import { BackEndErrorsInterface } from '../../types/BackEndErrors.interface';
 
 @Component({
   selector: 'mc-backend-error-massages',

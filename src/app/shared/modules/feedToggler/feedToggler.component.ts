@@ -9,6 +9,7 @@ import { isLoggedInSelector } from './../../../auth/store/selectors';
   styleUrls: ['./feedToggler.component.scss'],
 })
 export class FeedTogglerComponent implements OnInit {
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('tagName') tagNameProps: string | null;
 
   isLoggedIn$: Observable<boolean>;

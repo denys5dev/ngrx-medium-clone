@@ -8,7 +8,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-// NG_BUILD_MANGLE=false 
+// NG_BUILD_MANGLE=false
 // has to be < 10ms
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
