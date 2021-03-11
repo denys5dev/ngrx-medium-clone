@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./error-message.component.scss'],
 })
 export class ErrorMessageComponent {
-  @Input('message') messageProps: string = 'Something went wrong';
+  @Input('message') messageProps = 'Something went wrong';
 }

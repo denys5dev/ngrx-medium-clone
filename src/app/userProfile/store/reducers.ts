@@ -41,5 +41,5 @@ const userProfileReducer = createReducer(
 );
 
 export function reducers(state: UserProfileStateInterface, action: Action) {
-    return userProfileReducer(state, action);
+  return userProfileReducer(state, action);
 }

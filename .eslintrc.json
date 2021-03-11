@@ -21,6 +21,13 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "@angular-eslint/no-input-rename": "off",
+        "@angular-eslint/no-output-rename": "off",
+        "arrow-body-style": "off",
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "no-underscore-dangle": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/naming-convention": "off",
         "@angular-eslint/component-selector": [
           "error",
           {

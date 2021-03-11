@@ -1,4 +1,4 @@
-import { ProfileInterface } from "./Profile.interface";
+import { ProfileInterface } from './Profile.interface';
 
 export interface ArticleInterface {
   author: ProfileInterface;

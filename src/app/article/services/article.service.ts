@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class ArticleService {
   constructor(private _http: HttpClient) {}
 
-  deleteArticle(slug: string): Observable<{}> {
+  deleteArticle(slug: string): Observable<unknown> {
     const url = `${environment.apiUrl}/articles/${slug}`;
-    return this._http.delete<{}>(url);
+    return this._http.delete<unknown>(url);
   }
 }

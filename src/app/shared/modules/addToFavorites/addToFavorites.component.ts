@@ -12,7 +12,7 @@ export class AddToFavoritesComponent implements OnInit {
   @Input('articleSlug') articleSlugProps: string;
   @Input('favoritesCount') favoritesCountProps: number;
 
-  favoritesCount: number = 5;
+  favoritesCount = 5;
   isFavorite: boolean;
   constructor(private store: Store) {}
 

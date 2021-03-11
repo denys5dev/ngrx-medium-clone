@@ -38,5 +38,5 @@ const createArticleReducer = createReducer(
 );
 
 export function reducers(state: CreateArticleStateInterface, action: Action) {
-    return createArticleReducer(state, action)
+  return createArticleReducer(state, action);
 }
